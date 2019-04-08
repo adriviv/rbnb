@@ -1,8 +1,5 @@
 class Api::V1::UsersController < Api::V1::BaseController
 
-###### respond_to :json ??????????????
-
-
   def create
   @user = User.create(user_params)
     if @user.save
@@ -10,14 +7,14 @@ class Api::V1::UsersController < Api::V1::BaseController
       render json: response, status: :created
      else
       render json: @user.errors, status: :bad
-     end
     end
   end
+
 
 
   private
 
   def user_params
-    params.permit(:email, :password, :first_name, :last_name, :address, :credit_card_number)
+    params.require(:user).permit(:email, :password, :first_name, :last_name, :address, :credit_card_number)
   end
 end
