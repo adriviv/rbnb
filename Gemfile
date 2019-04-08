@@ -15,6 +15,8 @@ gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
 gem 'devise'
+gem 'simple_token_authentication', '~> 1.0' # see semver.org
+
 
 
 group :development do
