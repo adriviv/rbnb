@@ -7,6 +7,7 @@ Rails.application.routes.draw do
 
    namespace :api, defaults: { format: :json } do
     namespace :v1 do
+      resources :sessions, only: [:create]
       resources :users, only: [:create]
 
       resource :profile, only: [:show]
@@ -27,6 +28,7 @@ Rails.application.routes.draw do
     end
   end
 end
+
 
     # GET /profile => profiles#show
 
