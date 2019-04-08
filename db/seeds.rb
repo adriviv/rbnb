@@ -5,3 +5,39 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+User.destroy_all
+Project.destroy_all
+Pledge.destroy_all
+
+
+User.create(
+  first_name: 'luke',
+  last_name: 'Harris',
+  address: '35 Huaquiang Bei Street',
+  credit_card_number: 2737
+)
+User.create(
+  first_name: 'Sofa',
+  last_name: 'Pimienta',
+  address: '35 Futian Street',
+  credit_card_number: 6387
+)
+
+Project.create(
+  name: "Moovie",
+  description: "Middle East moovie",
+  image: "hehejhejeheeheejeee",
+  location: 'Taiwan',
+  category: "Marvel",
+  rewards: 'KTV with me',
+  amount_objective: 35,
+  video: "ehhejhejejkejekjekjeke",
+  user_id: 1
+  )
+
+Pledge.create(
+  amount: 23,
+  user_id: 2,
+  project_id: 1
+  )
+
