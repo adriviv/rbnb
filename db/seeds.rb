@@ -1,4 +1,4 @@
-# This file should contain all the record creation needed to seed the database with its default values.
+!# This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
 #
 # Examples:
@@ -10,20 +10,24 @@ Project.destroy_all
 Pledge.destroy_all
 
 
-User.create(
+User.create!(
   first_name: 'luke',
   last_name: 'Harris',
   address: '35 Huaquiang Bei Street',
-  credit_card_number: 2737
+  credit_card_number: 2737,
+  password: '123456',
+  email: 'luke@gmail.com'
 )
-User.create(
+User.create!(
   first_name: 'Sofa',
   last_name: 'Pimienta',
   address: '35 Futian Street',
-  credit_card_number: 6387
+  credit_card_number: 6387,
+  password: '987654',
+  email: 'sofa@gmail.com'
 )
 
-Project.create(
+Project.create!(
   name: "Moovie",
   description: "Middle East moovie",
   image: "hehejhejeheeheejeee",
@@ -35,7 +39,7 @@ Project.create(
   user_id: 1
   )
 
-Pledge.create(
+Pledge.create!(
   amount: 23,
   user_id: 2,
   project_id: 1
