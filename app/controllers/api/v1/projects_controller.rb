@@ -1,5 +1,5 @@
 class Api::V1::ProjectsController < Api::V1::BaseController
-acts_as_token_authentication_handler_for User, except: [ :show, :index ]
+# acts_as_token_authentication_handler_for User, except: [ :show, :index ]
 # respond_to :json
 
 before_action :set_project, only: [:show]
