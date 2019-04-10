@@ -17,7 +17,7 @@ Rails.application.routes.draw do
       # everyone
       resources :projects, only: [:index, :show] do
         # donor
-        resources :pledges, only: [:create]
+        resources :pledges, only: [:create, :index]
       end
 
       resources :initiatives, only: [:index, :show, :create]
