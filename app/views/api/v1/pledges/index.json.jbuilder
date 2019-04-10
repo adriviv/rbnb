@@ -1,6 +1,7 @@
-# json.restaurants do
-#   json.array! @restaurants do |restaurant|
-#     json.extract! restaurant, :id, :name, :address, :image, :description
-#   end
-# end
+json.pledges do
+  json.array! @pledges do |pledge|
+    json.extract! pledge, :amount
+  end
+end
 
+json.total @total
