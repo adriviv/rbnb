@@ -4,8 +4,13 @@ class Api::V1::ProjectsController < Api::V1::BaseController
 
 before_action :set_project, only: [:show]
 
-  def index
-    @projects = Project.all
+ def index
+    if params[:query].present?
+      sql_query = "name ILIKE :query OR location ILIKE :query"
+      @projects = Project.where(sql_query, query: "%#{params[:query]}%")
+    else
+      @projects = Project.all
+    end
   end
 
   def show
