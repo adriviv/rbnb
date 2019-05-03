@@ -1,7 +1,9 @@
 class Api::V1::UsersController < Api::V1::BaseController
 
   def create
+
   @user = User.create(user_params)
+
     if @user.save
       response = { message: 'User created successfully', auth_token: @user.authentication_token }
       render json: response, status: :created
@@ -15,6 +17,9 @@ class Api::V1::UsersController < Api::V1::BaseController
   private
 
   def user_params
-    params.require(:user).permit(:email, :password, :first_name, :last_name, :address, :credit_card_number)
+    params.require(:user).permit(:email, :encrypted_password, :first_name, :last_name, :address, :credit_card_number)
   end
 end
+
+
+

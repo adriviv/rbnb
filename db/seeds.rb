@@ -15,7 +15,7 @@ User.create!(
   last_name: 'Harris',
   address: '35 Huaquiang Bei Street',
   credit_card_number: 2737,
-  password: '123456',
+  encrypted_password: '123456',
   email: 'luke@gmail.com'
 )
 User.create!(
@@ -23,7 +23,7 @@ User.create!(
   last_name: 'Pimienta',
   address: '35 Futian Street',
   credit_card_number: 6387,
-  password: '987654',
+  encrypted_password: '987654',
   email: 'sofa@gmail.com'
 )
 
@@ -58,7 +58,7 @@ Project.create!(
   rewards: 'Pre Screening',
   amount_objective: 300000000,
   video: "none",
-  user_id: 1
+  user_id: 2
   )
 Project.create!(
   name: "Terminator 6",
@@ -69,7 +69,7 @@ Project.create!(
   rewards: 'Travel to premiere',
   amount_objective: 35,
   video: "none",
-  user_id: 1
+  user_id: 2
   )
 
 
@@ -77,6 +77,6 @@ Project.create!(
 Pledge.create!(
   amount: 23,
   user_id: 2,
-  project_id: 1
+  project_id: 13
   )
 
